@@ -64,13 +64,16 @@ While WAF is part of the CloudFront ecosystem, it acts like the first security c
 We had error 
 **WAFInvalidParameterException: The ARN isn't valid.**
 The reason for this error is Regional and Global scope entities:
-**Global**:
-- WAF Web ACL with a CloudFront distribution: Use web_acl_id = aws_wafv2_web_acl.cloudfront_waf.arn directly in the aws_cloudfront_distribution resource in main.tf
+**Global**:<br>
+- WAF Web ACL with a CloudFront distribution: Use web_acl_id = aws_wafv2_web_acl.cloudfront_waf.arn directly in the aws_cloudfront_distribution resource in main.tf<br>
 - Set the WAF region to us-east-1
-**Regional**:
+**Regional**:<br>
 - WAF Web ACL with ALB / API Gateway / AppSync: Use aws_wafv2_web_acl_association block in waf.tf resource 
 
 <img width="1919" height="996" alt="Screenshot 2025-09-04 162747" src="https://github.com/user-attachments/assets/69c349e6-a2b9-4ea1-ae1d-991ea625be96" />
+
 <img width="1919" height="1001" alt="Screenshot 2025-09-04 162759" src="https://github.com/user-attachments/assets/54bfa827-90f4-4293-a653-18b0e1159ac6" />
+
 <img width="1919" height="1005" alt="Screenshot 2025-09-04 162810" src="https://github.com/user-attachments/assets/3e928718-6566-4d53-a101-5d90f2ddee21" />
+
 
