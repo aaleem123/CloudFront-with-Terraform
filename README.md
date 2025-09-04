@@ -54,10 +54,10 @@ While WAF is part of the CloudFront ecosystem, it acts like the first security c
 - S3 Bucket is private, no public access allowed.
 - OAC ensures only CloudFront can fetch objects from S3.
 - WAF applies AWS-managed rules + custom geo rate limiting to protect the app from:
-  ⦁	Bad bots
-  ⦁	Anonymous or malicious IPs
-  ⦁	Suspicious IP reputation
-  ⦁	Specific countries (geo block)
+  - ⦁	Bad bots
+  - ⦁	Anonymous or malicious IPs
+  - ⦁	Suspicious IP reputation
+  - ⦁	Specific countries (geo block)
 
 
 ## ⚠️ What went wrong
@@ -72,11 +72,14 @@ The reason for this error is Regional and Global scope entities:
 **Regional**:
 - WAF Web ACL with ALB / API Gateway / AppSync: Use aws_wafv2_web_acl_association block in waf.tf resource 
 
+
+
 <img width="1919" height="996" alt="Screenshot 2025-09-04 162747" src="https://github.com/user-attachments/assets/69c349e6-a2b9-4ea1-ae1d-991ea625be96" />
 
 <img width="1919" height="1001" alt="Screenshot 2025-09-04 162759" src="https://github.com/user-attachments/assets/54bfa827-90f4-4293-a653-18b0e1159ac6" />
 
 <img width="1919" height="1005" alt="Screenshot 2025-09-04 162810" src="https://github.com/user-attachments/assets/3e928718-6566-4d53-a101-5d90f2ddee21" />
+
 
 
 
